@@ -1,43 +1,78 @@
+# Binary Leaves Classification
 
-This notebook is a detailed guide for tackling the binary leaf recognition homework assignment. It includes everything from data preparation and feature extraction to implementing and evaluating machine learning models, including neural networks and ensemble methods.
+## Overview
+This project aims to classify five types of leaves using binary image processing techniques. The dataset consists of binary images of leaves, which vary in rotation, scale, and natural shape differences. The classification can be approached using handcrafted features, machine learning algorithms, or advanced models.
 
-Here’s how the provided sections help:
+## Dataset
+The dataset is organized into folders, each representing a leaf type. A `labels.json` file maps numeric labels to leaf names.
 
-Data Preparation:
+### Leaf Types
+1. Japanese Maple  
+2. Chinese Cinnamon*  
+3. Ginkgo (Maidenhair Tree)  
+4. Chinese Tulip Tree*  
+5. Tangerine  
 
-Loads binary leaf images and their corresponding labels.
-Ensures the dataset is correctly structured for further analysis.
-Feature Extraction:
+(*Optional: These can be omitted for initial analysis.)
 
-Uses properties like area, perimeter, circularity, and Hu moments to describe the leaves.
-Provides flexibility for working with either binary regions or contours.
-Machine Learning Models:
+## Tasks
+1. **Extract Features**  
+   Use binary image properties like area, perimeter, circularity, and Hu moments to describe the leaves.  
 
-Implements a multi-layer perceptron (MLP) for classification.
-Evaluates the model's performance using metrics like accuracy, precision, recall, and F1-score.
-Visualizes the training process and results with plots and confusion matrices.
-Ensemble Methods:
+2. **Classification**  
+   - Handcrafted rules  
+   - Machine learning (e.g., K-Nearest Neighbors)  
+   - Advanced models (e.g., Multi-Layer Perceptron)  
 
-Prepares features for models like Gradient Boosting Classifier.
-Offers a robust alternative to neural networks for this classification task.
-Evaluation:
+3. **Evaluation**  
+   - Accuracy  
+   - Precision  
+   - Recall  
+   - F1-Score  
 
-Uses confusion matrices and classification reports to analyze model performance.
-Highlights leaf classes that are easier or harder to distinguish, encouraging deeper analysis.
-Suggestions for Improvement:
-Hyperparameter Tuning:
+## Getting Started
 
-Explore hyperparameter optimization techniques like grid search or random search for both MLP and ensemble methods.
-Optimize learning rates, dropout rates, or the number of layers in the MLP.
-Feature Scaling:
+### Prerequisites
+- Python 3.8+
+- Libraries: `numpy`, `matplotlib`, `opencv-python`
 
-Standardize or normalize the extracted features to improve model performance.
-Ensemble Learning:
 
-Compare Gradient Boosting with Random Forests or XGBoost for performance evaluation.
-Expanded Metrics:
+### Setting Up
+1. Clone the repository or download the dataset.  
+2. Install dependencies using `pip install -r requirements.txt`.
 
-Include metrics like AUC-ROC to better evaluate model robustness.
-Additional Augmentation:
+## Key Steps
 
-Simulate variations in scale, rotation, or noise to test model generalization.
+### 1. Load and Display Images
+Visualize sample images from the dataset to understand its structure.
+
+### 2. Feature Extraction
+Compute binary image properties:
+- Area
+- Perimeter
+- Circularity
+- Hu Moments
+
+### 3. Classification
+- Start with 2-3 leaf types, then expand to all 5.
+- Use classification algorithms to distinguish between leaf types.
+
+### 4. Evaluation
+Analyze and summarize results, focusing on:
+- Leaf types that are easy/difficult to classify
+- Overall performance metrics
+
+## Hints
+- Combine multiple features for better results.  
+- Normalize or scale features if combining them.  
+- Avoid sensitive moments like `hu_3` and `hu_4`.
+
+## Results
+Include a summary of the classification results here, such as:
+- Accuracy for each leaf type
+- Confusion matrix
+- Insights into difficult-to-classify leaves
+
+## License
+This project is for educational purposes. Use the code and dataset responsibly.
+
